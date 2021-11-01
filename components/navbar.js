@@ -19,7 +19,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 
 const LinkItem = ({ href, path, children }) => {
   const active = path == href
-  const inactiveColor = useColorMmodeValue('gray200', 'whiteAlpha.900')
+  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
   return (
     <NextLink href={href}>
     <Link p={2} bg={active ? 'glassTeal' : undefined}
@@ -44,6 +44,47 @@ const LinkItem = ({ href, path, children }) => {
       <Logo />
         </Heading>
       </Flex>
+
+
+      <Stack direction={{base: 'column', md:'row'}}
+      display ={{base:'none', md:'flex'}}
+      width = {{base:'full', md: 'auto'}}
+      alignItems='center'
+      flexGrow={1}
+      mt={{ base: 4, nmd: 0}}
+      >
+      <LinkItem href="/works" path={path}>
+        Works
+      </LinkItem>
+
+      <LinkItem href="/posts" path={path}>
+      Posts
+      </LinkItem>
+      </Stack>
+
+      <Box flex={1} align="right">
+      <Box ml={2} display={{base: 'inline-block', md:'none'}}>
+        <Menu>
+          <MenuButton as={IconButton} icon={<HamburgerIcon /> } variant="outline" aria-label="Options"> 
+          </MenuButton>
+
+          <MenuList>
+            <NextLink href="/" passHref>
+              <MenuItem as={Link}>About</MenuItem>
+            </NextLink>
+            <NextLink href="/works" passHref>
+              <MenuItem as={Link}>Works</MenuItem>
+            </NextLink>
+            <NextLink href="/posts" passHref>
+              <MenuItem as={Link}>Posts</MenuItem>
+            </NextLink>
+            <NextLink href="https://www.youtube.com/watch?v=bSMZgXzC9AA" passHref>
+              <MenuItem as={Link}>View Source</MenuItem>
+            </NextLink>
+          </MenuList>
+        </Menu>
+      </Box>
+      </Box>
       </Container>
       </Box>
     )
