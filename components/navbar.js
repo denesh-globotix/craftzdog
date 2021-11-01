@@ -6,7 +6,7 @@ import {
   Link, 
   Stack, 
   Heading, 
-  FLex, 
+  Flex, 
   Menu, 
   MenuItem, 
   MenuList, 
@@ -38,7 +38,13 @@ const LinkItem = ({ href, path, children }) => {
       zIndex = {1}
       {...props}
       >
-      Navbar
+      <Container display="flex" p={5} maxW="container.md" wrap="wrap" align="center" justify="space-between">
+      <Flex align="center" mr={10}>
+        <Heading as='h1' size="lg" letterSpacing={'tighter'}>
+      <Logo />
+        </Heading>
+      </Flex>
+      </Container>
       </Box>
     )
   }
