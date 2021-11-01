@@ -1,0 +1,36 @@
+{
+  "name": "Craftzdog_project",
+  "version": "1.0.0",
+  "description": "A trial at craftzdog website",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "prettier": "prettier write .",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denesh-globotix/craftzdog.git"
+  },
+  "keywords": [],
+  "author": "den",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/denesh-globotix/craftzdog/issues"
+  },
+  "homepage": "https://github.com/denesh-globotix/craftzdog#readme",
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.10",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "framer-motion": "^5.0.1",
+    "next": "^12.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.1.0",
+    "eslint-config-next": "^12.0.2",
+    "prettier": "^2.4.1"
+  }
+}
