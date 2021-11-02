@@ -25,16 +25,16 @@ const Logo = () => {
       <a>
         <LogoBox>
           <Image src={footPrintImg} width={20} height={400} alt="logo" />
-        <Text color={useColorModeValue('gray.800','whiteAlpha.900')}
-          fontFamily="M PLUS Rounded 1c"
-          fontWeight='bold'
-          ml={7} >
+          <Text color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+            fontFamily="M PLUS Rounded 1c"
+            fontWeight='bold'
+            ml={7} >
             PawPrint
           </Text>
         </LogoBox>
       </a>
     </Link>
   )
- }
+}
 
 export default Logo
