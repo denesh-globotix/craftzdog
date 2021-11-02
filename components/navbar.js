@@ -26,7 +26,7 @@ const LinkItem = ({ href, path, children }) => {
         color={active ? '#202023' : inactiveColor}
       >
         {children}
-        
+
       </Link>
     </NextLink>
   )
@@ -37,7 +37,10 @@ const Navbar = props => {
   // This is because router is passed in to Navbar as <Navbar path={router.asPath} />
   const { path } = props
   return (
-    <Box position="fixed" as="nav" w="100%" bg={useColorModeValue('#fffff40', '#20202380')}
+    <Box position="fixed"
+      as="nav"
+      w="100%"
+      bg={useColorModeValue('#fffff40', '#20202380')}
       style={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
       {...props}
@@ -75,16 +78,16 @@ const Navbar = props => {
               </MenuButton>
 
               <MenuList>
-            
+
                 {/* passHref forces the NextLink to pass it's url to the child */}
                 <NextLink href="/" passHref >
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
-            
+
                 <NextLink href="/works" passHref>
                   <MenuItem as={Link}>Works</MenuItem>
                 </NextLink>
-            
+
                 <NextLink href="/posts" passHref>
                   <MenuItem as={Link}>Posts</MenuItem>
                 </NextLink>
@@ -98,7 +101,7 @@ const Navbar = props => {
                   <MenuItem target="_blank" as={Link}>View Repository</MenuItem>
                 </NextLink>
               </MenuList>
-            
+
             </Menu>
           </Box>
         </Box>
