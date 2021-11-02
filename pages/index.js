@@ -1,7 +1,9 @@
 import NextLink from 'next/link'
-import { Button,  Container, Box, Heading, Image, Link, useColorModeValue } from '@chakra-ui/react'
+import { Button, Container, Box, Heading, Image, Link, useColorModeValue } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
+import Bio, { BioSection, BioYear } from '../components/bio'
+
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 const Page = () => {
@@ -25,7 +27,7 @@ const Page = () => {
       </Box>
 
       <Section delay={0.3}>
-        <Heading as="h3" variant="section-titel">
+        <Heading as="h3" variant="section-title">
           Work
         </Heading>
         <Paragraph>I am a junior developer learning the intricacies of ReactJS.
@@ -40,6 +42,30 @@ const Page = () => {
             </Button>
           </NextLink>
         </Box>
+      </Section>
+
+      <Section delay={0.6}>
+        <Heading as="h3" variant="section-title" >
+          Bio
+        </Heading>
+        <BioSection>
+          <BioYear>1984</BioYear>
+          Born in the land down under
+        </BioSection>
+        <BioSection>
+          <BioYear>2020</BioYear>
+          Completed bachelor&apos;s in the city. A different field and  the hustle is always on
+        </BioSection>
+      </Section>
+
+      <Section delay={0.6}>
+        <Heading as="h3" variant="section-title">
+          Hobbies
+        </Heading>
+        <Paragraph>
+          Sketching, guitar, tabla, boxing
+          <Link href="https://www.google.com">Sketching</Link>
+        </Paragraph>
       </Section>
     </Container>
   )
