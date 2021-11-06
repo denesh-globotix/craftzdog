@@ -17,19 +17,32 @@ import {
 
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button.js'
-const LinkItem = ({ href, path, children }) => {
+const LinkItem = ({ href, path, children, opennewtab = false }) => {
   const active = path === href
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
-  return (
-    <NextLink href={href}>
-      <Link p={2} bg={active ? 'glassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
-      >
-        {children}
-
-      </Link>
-    </NextLink>
-  )
+  if (opennewtab === true) {
+    return (
+      <NextLink href={href} passHref>
+        <Link p={2} bg={active ? 'glassTeal' : undefined}
+          color={active ? '#202023' : inactiveColor} target="_blank"
+        >
+          {children}
+  
+        </Link>
+      </NextLink>
+    )
+  } else {
+    return (
+      <NextLink href={href} passHref>
+        <Link p={2} bg={active ? 'glassTeal' : undefined}
+          color={active ? '#202023' : inactiveColor}
+        >
+          {children}
+  
+        </Link>
+      </NextLink>
+    )
+  }
 }
 
 const Navbar = props => {
@@ -60,12 +73,20 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
-          <LinkItem href="/works" path={path}>
+          <LinkItem href="/works" path={path} opennewtab={false}>
             Works
           </LinkItem>
 
-          <LinkItem href="/posts" path={path}>
+          <LinkItem href="/posts" path={path} opennewtab={false}>
             Posts
+          </LinkItem>
+
+          <LinkItem href="https://www.youtube.com/watch?v=bSMZgXzC9AA" opennewtab={true}>
+            Source
+          </LinkItem>
+
+          <LinkItem href="https://github.com/craftzdog/craftzdog-homepage/" opennewtab={true}>
+            Repository
           </LinkItem>
         </Stack>
 

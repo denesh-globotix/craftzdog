@@ -24,12 +24,12 @@ const Logo = () => {
     <Link href="/">
       <a>
         <LogoBox>
-          <Image src={footPrintImg} width={20} height={400} alt="logo" />
+          <Image src={footPrintImg} width={15} height={1} alt="logo" />
           <Text color={useColorModeValue('gray.800', 'whiteAlpha.900')}
             fontFamily="M PLUS Rounded 1c"
             fontWeight='bold'
             ml={7} >
-            PawPrint
+            Paw
           </Text>
         </LogoBox>
       </a>
