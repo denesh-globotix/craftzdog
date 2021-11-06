@@ -1,17 +1,39 @@
 import NextLink from 'next/link'
-import { Button, Container, Box, Heading, Image, Link, useColorModeValue } from '@chakra-ui/react'
+import {
+  Button,
+  Container,
+  Box,
+  Heading,
+  Image,
+  Link,
+  useColorModeValue,
+  SimpleGrid,
+  Icon,
+  List,
+  ListItem
+} from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import Bio, { BioSection, BioYear } from '../components/bio'
+import { GridItem } from '../components/grid-item'
+import {
+  IoLogoTwitter,
+  IoLogoInstagram,
+  IoLogoGithub,
+  IoLogoDiscord
+} from 'react-icons/io5'
 
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import thumbYoutube from '../public/images/links/youtube.png'
+import thumbInkDrop from '../public/images/works/inkdrop_01.png'
+
 
 const Page = () => {
   return (
     <Layout>
       <Container>
-        <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mt={5} mb ={5} aligh="center">
+        <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mt={5} mb={5} aligh="center">
           I&apos;m learning ReactJS, it&apos;s awesome!
         </Box>
 
@@ -68,6 +90,37 @@ const Page = () => {
             Sketching, guitar, tabla, boxing, {' '}
             <Link href="https://www.google.com">Sketching</Link>
           </Paragraph>
+        </Section>
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            On the web
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href="www.github.com/craftzdog" target="_blank">
+                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub} />}>
+                  @craftzdog
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="www.twitter.com/inkdrop_app" target="_blank">
+                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoTwitter} />}>
+                  @inkdrop_app
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
+
+          <SimpleGrid columns={[1, 2, 2]} gap={6} mt={5}>
+            <GridItem href="https://www.youtube.com/devaslife" title="Dev as life" thumbnail={thumbYoutube}>
+              My Youtube channel
+            </GridItem>
+
+            <GridItem href="https://www.inkdrop.app/" title="Inkdrop" thumbnail={thumbInkDrop}>
+              Inkdrop
+            </GridItem>
+          </SimpleGrid>
         </Section>
       </Container>
     </Layout>
