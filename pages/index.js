@@ -40,7 +40,7 @@ const Page = () => {
         <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
-              Call me den
+              Welcome to the website. Do you like it?
             </Heading>
             <p>Web Developer/ Software Engineer</p>
           </Box>
